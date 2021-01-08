@@ -2,7 +2,9 @@ package TaskHibernate;
 
 import TaskHibernate.model.User;
 import TaskHibernate.service.*;
+
 import java.util.List;
+
 
 public class Main {
 
@@ -28,6 +30,8 @@ public class Main {
 
 //        Очистка таблицы User(ов)
         a.cleanUsersTable();
+//        a.removeUserById(2);
+//        a.removeUserById(3);
 
 //        Удаление таблицы
         a.dropUsersTable();

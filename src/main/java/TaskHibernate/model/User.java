@@ -1,31 +1,33 @@
 package TaskHibernate.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@Table
+@Entity
+@Table(name = "users")
 public class User {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
 
-    @Column
-    private String name;
+    @Column(name = "name")
+    private String aName;
 
-    @Column
-    private String lastName;
+    @Column(name = "lastName")
+    private String bLastName;
 
-    @Column
-    private Byte age;
+    @Column(name = "age")
+    private Byte cAge;
 
     public User() {
 
     }
 
     public User(String name, String lastName, Byte age) {
-        this.name = name;
-        this.lastName = lastName;
-        this.age = age;
+        this.aName = name;
+        this.bLastName = lastName;
+        this.cAge = age;
     }
 
     public Long getId() {
@@ -37,36 +39,36 @@ public class User {
     }
 
     public String getName() {
-        return name;
+        return aName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.aName = name;
     }
 
     public String getLastName() {
-        return lastName;
+        return bLastName;
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.bLastName = lastName;
     }
 
     public Byte getAge() {
-        return age;
+        return cAge;
     }
 
     public void setAge(Byte age) {
-        this.age = age;
+        this.cAge = age;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
+                ", name='" + aName + '\'' +
+                ", lastName='" + bLastName + '\'' +
+                ", age=" + cAge +
                 '}';
     }
 

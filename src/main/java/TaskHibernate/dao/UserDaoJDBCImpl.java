@@ -54,7 +54,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
             preparedStatement.execute();
 
-            System.out.printf("User с именем – %s добавлен в базу данны\n", name);
+            System.out.printf("User с именем – %s добавлен в базу данных\n", name);
         } catch (SQLException e) {
             e.printStackTrace();
             System.err.println("User don't saved");

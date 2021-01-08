@@ -1,41 +1,42 @@
 package TaskHibernate.service;
 
-import TaskHibernate.dao.UserDao;
-import TaskHibernate.dao.UserDaoJDBCImpl;
+import TaskHibernate.dao.*;
 import TaskHibernate.model.User;
 
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
 
-    private final UserDao a;
+    private final UserDao JDBC;
+    private final UserDao Hibernate;
 
     public UserServiceImpl() {
-        a = new UserDaoJDBCImpl();
+        JDBC = new UserDaoJDBCImpl();
+        Hibernate = new UserDaoHibernateImpl();
     }
 
     public void createUsersTable() {
-        a.createUsersTable();
+        Hibernate.createUsersTable();
     }
 
     public void dropUsersTable() {
-        a.dropUsersTable();
+        Hibernate.dropUsersTable();
     }
 
     public void saveUser(String name, String lastName, byte age) {
-        a.saveUser(name, lastName, age);
+        Hibernate.saveUser(name, lastName, age);
     }
 
     public void removeUserById(long id) {
-        a.removeUserById(id);
+        Hibernate.removeUserById(id);
     }
 
     public List<User> getAllUsers() {
-        return a.getAllUsers();
+        return Hibernate.getAllUsers();
     }
 
     public void cleanUsersTable() {
-        a.cleanUsersTable();
+        Hibernate.cleanUsersTable();
     }
 
 }
